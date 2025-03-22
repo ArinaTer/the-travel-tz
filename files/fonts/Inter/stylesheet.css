@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Inter 18pt';
+  src: url('Inter18pt-Regular.eot');
+  src: url('Inter18pt-Regular.eot?#iefix') format('embedded-opentype'),
+    url('Inter18pt-Regular.woff2') format('woff2'),
+    url('Inter18pt-Regular.woff') format('woff'),
+    url('Inter18pt-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter 18pt';
+  src: url('Inter18pt-SemiBold.eot');
+  src: url('Inter18pt-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('Inter18pt-SemiBold.woff2') format('woff2'),
+    url('Inter18pt-SemiBold.woff') format('woff'),
+    url('Inter18pt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
