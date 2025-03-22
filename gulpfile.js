@@ -1,0 +1,37 @@
+import gulp from "gulp";
+import { path, buildPath } from "./gulp/config/path.js";
+import { plugins } from "./gulp/config/plugins.js";
+
+const isBuild = process.argv.includes("--build");
+global.app = {
+    isBuild,
+    isDev: !isBuild,
+    path: isBuild ? buildPath : path,
+    gulp,
+    plugins,
+};
+
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+
+function watcher() {
+    gulp.watch(path.watch.files, { usePolling: true }, copy);
+    gulp.watch(path.watch.html, { usePolling: true }, html);
+    gulp.watch(path.watch.scss, { usePolling: true }, scss);
+    gulp.watch(path.watch.js, { usePolling: true }, js);
+    gulp.watch(path.watch.images, { usePolling: true }, images);
+}
+
+const mainTasks = gulp.parallel(copy, html, scss, js, images);
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+
+export { dev };
+export { build };
+
+gulp.task("default", dev);

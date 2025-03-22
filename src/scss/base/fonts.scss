@@ -1,0 +1,11 @@
+// Inter
+@include font-face('InterRegular', '../files/fonts/Inter/Inter18pt-Regular');
+@include font-face('InterSemiBold', '../files/fonts/Inter/Inter18pt-SemiBold');
+
+// Inter
+@mixin regular {
+  font-family: 'InterRegular', Arial, sans-serif;
+}
+@mixin Semibold {
+  font-family: 'InterSemiBold', Arial, sans-serif;
+}

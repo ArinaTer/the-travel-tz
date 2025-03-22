@@ -1,0 +1,13 @@
+// Base
+@import './base/var';
+@import './base/reset';
+@import './base/mixins';
+@import './base/fonts';
+@import './base/common';
+@import './base/libs';
+
+// Components
+@import './components/header';
+
+// section
+@import './section/trips';
